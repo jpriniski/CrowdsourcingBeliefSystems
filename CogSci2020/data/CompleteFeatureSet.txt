@@ -26,7 +26,6 @@ number
 amount
 rate
 cost
-price
 increas
 decreas
 money
