@@ -50,3 +50,12 @@ gain
 price
 buy
 asset
+probabilist
+probabl
+mean
+median
+mode
+stat
+equal
+less
+more
