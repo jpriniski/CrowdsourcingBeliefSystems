@@ -1,6 +1,6 @@
 # Crowdsourcing to Analyze Belief Systems Underlying Social Issues
 
-Repository for code used in Priniski, J.H. & Holyoak, K. (2020). Crowdsourcing to Analyze Belief Systems Underlying Social Issues. *Proceedings of the Cognitive Science Society*.
+Repository for code used in Priniski, J.H. & Holyoak, K.J. (2020). Crowdsourcing to Analyze Belief Systems Underlying Social Issues. *Proceedings of the Cognitive Science Society*.
 
 If you use any of the code in this repository, please consider referencing: 
 ```
