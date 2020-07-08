@@ -69,6 +69,29 @@ ggplot(data_coded3, aes(`Moral Construct`))+
   labs(y ="Number of Uses in Corpus")+
   theme_bw(12)
 
+#look at pro cap pun
+data_coded3%>%
+  filter(Position == 'For')%>%
+  ggplot(aes(`Moral Construct`))+
+  geom_bar()+
+  facet_wrap(~`Type`)+
+  labs(y ="Number of Uses in Corpus")+
+  ggtitle("Pro-Capital Punishment Posts")+
+  theme_bw(12)
+
+#look at anti cap pun
+data_coded3%>%
+  filter(Position == 'Against')%>%
+  ggplot(aes(`Moral Construct`))+
+  geom_bar()+
+  facet_wrap(~`Type`)+
+  labs(y ="Number of Uses in Corpus")+
+  ggtitle("Anti-Capital Punishment Posts")+
+  theme_bw(12)
+
+
+
+
 
 
 
