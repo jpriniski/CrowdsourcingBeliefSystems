@@ -20,7 +20,7 @@ require(readxl)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-data_coded <- read_csv("data_coded.csv")
+data_coded <- read_csv("data/data_coded.csv")
 
 data_coded2 <- data_coded%>%
   filter(Position != 0)%>%
@@ -43,11 +43,11 @@ model1 <- brm(category ~  Position + (1 | postid),
 
 ce <- conditional_effects(model1, effects = 'Position', categorical = T)
 
-plot(ce, theme=theme_bw(10))
+plot(ce, theme=theme_bw(20))
 
 #look at moral word types
-data_coded3$instance <- as.integer(instance)
-vals <- data_coded3$instance %% 2 == 0
+data_coded2$instance <- as.integer(data_coded2$instance)
+
 data_coded3 <- data_coded2%>%
   filter(category == 'Moral')%>%
   mutate(`Moral Construct`=recode(instance,
@@ -61,7 +61,7 @@ data_coded3 <- data_coded2%>%
                                   `8` = 'Authority',
                                   `9` = 'Sanctity',
                                   `10` = 'Sanctity'))%>%
-  mutate(`Type` = ifelse(vals, 'Vice', 'Virtue'))
+  mutate(`Type` = ifelse(instance %% 2 == 0, 'Vice', 'Virtue'))
 
 ggplot(data_coded3, aes(`Moral Construct`))+
   geom_bar()+
